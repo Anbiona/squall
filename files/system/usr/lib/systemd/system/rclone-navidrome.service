@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync music library from Cloudflare R2
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rclone sync music: /var/lib/navidrome/music --config /etc/rclone.conf
+ProtectSystem=strict
+ReadOnlyPaths=/etc/rclone.conf
+ReadWritePaths=/var/lib/navidrome/music
+ProtectHome=yes

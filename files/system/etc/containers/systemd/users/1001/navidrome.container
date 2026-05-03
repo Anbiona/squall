@@ -1,0 +1,18 @@
+[Unit]
+Description=Navidrome music server
+After=network-online.target
+
+[Container]
+Image=docker.io/deluan/navidrome:latest
+AutoUpdate=registry
+PublishPort=4533:4533
+Volume=/var/lib/navidrome/data:/data:Z
+Volume=/var/lib/navidrome/music:/music:ro,z
+SecurityLabelType=container_t
+UserNS=keep-id
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

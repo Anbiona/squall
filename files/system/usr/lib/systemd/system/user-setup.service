@@ -1,0 +1,15 @@
+[Unit]
+Description=Create home directories for service users
+After=local-fs.target systemd-sysusers.service
+Before=default.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/libexec/user-setup.sh
+ProtectSystem=strict
+ReadWritePaths=/var/lib
+ProtectHome=yes
+
+[Install]
+WantedBy=default.target
