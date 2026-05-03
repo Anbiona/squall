@@ -1,0 +1,29 @@
+# image will be published to ghcr.io/<user>/<name>
+name: squall-local
+description: This is my personal OS image.
+
+base-image: ghcr.io/secureblue/iot-main-hardened
+image-version: latest
+
+cosign-version: none
+nushell-version: none
+
+platforms:
+- linux/amd64
+
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: dnf
+    install:
+      install-weak-deps: false
+      packages:
+        - rclone
+    remove:
+      packages:
+        - distrobox
+
+  - type: signing
