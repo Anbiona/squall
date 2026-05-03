@@ -24,3 +24,5 @@ jobs:
     uses: ./.github/workflows/build-recipe.yml
     with:
       recipe: squall-local.yml
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}

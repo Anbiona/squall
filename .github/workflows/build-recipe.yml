@@ -6,6 +6,9 @@ on:
       recipe:
         type: string
         required: true
+    secrets:
+      SIGNING_SECRET:
+        required: true
 
 concurrency: 
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.recipe }}
