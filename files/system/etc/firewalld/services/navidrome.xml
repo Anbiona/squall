@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Navidrome</short>
+  <description>Navidrome music server</description>
+  <port protocol="tcp" port="4533"/>
+</service>

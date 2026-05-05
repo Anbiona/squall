@@ -10,6 +10,8 @@ while IFS=: read -r username _ uid gid _ homedir shell; do
         if [[ ! -d "$homedir" ]]; then
             install -d -m 0750 -o "$uid" -g "$gid" "$homedir"
             install -d -m 0750 -o "$uid" -g "$gid" "$homedir/data"
+            echo "${username}:100000:65536" >> /etc/subuid
+            echo "${username}:100000:65536" >> /etc/subgid
             touch /var/lib/systemd/linger/"$username"
 
             case "$username" in

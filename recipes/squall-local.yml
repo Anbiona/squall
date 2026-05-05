@@ -26,6 +26,10 @@ modules:
       packages:
         - distrobox
 
+  - type: script
+    scripts:
+      - scripts/firewalld.sh
+
   - type: systemd
     system:
       enabled:
