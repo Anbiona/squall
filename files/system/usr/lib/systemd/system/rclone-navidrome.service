@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rclone sync music: /var/lib/navidrome/music --config /etc/rclone.conf
+ExecStart=/usr/bin/rclone sync music:music /var/lib/navidrome/music --config /etc/rclone.conf
 ProtectSystem=strict
 ReadOnlyPaths=/etc/rclone.conf
 ReadWritePaths=/var/lib/navidrome/music
