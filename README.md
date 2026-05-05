@@ -1,8 +1,19 @@
 # squall &nbsp; [![bluebuild build badge](https://github.com/anbiona/squall/actions/workflows/build.yml/badge.svg)](https://github.com/anbiona/squall/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+Squall is a personal immutable Linux image built with [BlueBuild](https://blue-build.org) and based on [secureblue](https://secureblue.dev). It is designed as a self-hosted home server with a focus on security and automation.
 
-After setup, it is recommended you update this README to describe your custom image.
+## Features
+
+- Automatic provisioning of service users for use with podman
+- Music library synced from Cloudflare R2 via rclone after automatic daily updates
+- All services running as rootless Podman quadlets under dedicated service accounts
+
+## Services
+
+| Service   | Description              |
+|-----------|--------------------------|
+| [Navidrome](https://navidrome.org/) | Self-hosted music server |
+| TBD       | TBD                      |
 
 ## Installation
 
