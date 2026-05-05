@@ -28,7 +28,7 @@ modules:
 
   - type: script
     scripts:
-      - scripts/firewalld.sh
+      - firewalld.sh
 
   - type: systemd
     system:
