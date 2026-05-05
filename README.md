@@ -7,9 +7,7 @@ After setup, it is recommended you update this README to describe your custom im
 ## Installation
 
 > [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
-
-To rebase an existing atomic Fedora installation to the latest build:
+> This is my personal image, it is not intended for use outside of my environment.
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
@@ -28,11 +26,9 @@ To rebase an existing atomic Fedora installation to the latest build:
   systemctl reboot
   ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
-
 ## ISO
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/how-to/generate-iso/#_top). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+I have not generated an ISO. Download the upstream Fedora-IoT or Fedora-CoreOS depending on the image and rebase after install.
 
 ## Verification
 
